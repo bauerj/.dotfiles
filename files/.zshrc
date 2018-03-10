@@ -8,7 +8,7 @@ if [[ $(uname) == MSYS* ]]; then
   # Meld
   export PATH="$PATH:/c/Program Files (x86)/Meld"
   # GPG
-  export PATH="$PATH:/C/Program Files (x86)/GnuPG/bin"
+  export PATH="/C/Program Files (x86)/GnuPG/bin:$PATH"
   # Theme
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir custom_git_fast)
   POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
