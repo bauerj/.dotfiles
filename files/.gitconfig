@@ -12,6 +12,6 @@
 [merge]
 	tool = meld
 [mergetool "meld"]
-	cmd = 'meld'
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 [gc]
 	auto = 256
