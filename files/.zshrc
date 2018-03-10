@@ -20,7 +20,17 @@ if [[ $(uname) == MSYS* ]]; then
   }
 else
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs root_indicator)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon status battery time public_ip)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon status battery time custom_public_host)
+  function none_prompt_segment { echo $5 }
+  function get_public_host() {
+    # Prints the last two parts of the hostname for the current public IP
+    host $(prompt_public_ip none) | awk '{print $NF}' | tr '.' '\n' | tail -n 3 | xargs | tr ' ' '.'
+  }
+  POWERLEVEL9K_CUSTOM_PUBLIC_HOST=get_public_host
+fi
+
+if [[ $(uname -a) == *MANJARO* ]]; then
+  alias p="sudo powerpill"
 fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
