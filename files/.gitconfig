@@ -1,0 +1,18 @@
+[core]
+	autocrlf = true
+	preloadindex = true
+	fscache = true
+[user]
+	email = bauerj@bauerj.eu
+	name = Johann Bauer
+	signingkey = E546EA0987C09B6EE59A53F484F1BF925B1F484D
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[merge]
+	tool = meld
+[mergetool "meld"]
+	cmd = 'meld'
+[gc]
+	auto = 256
