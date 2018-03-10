@@ -11,3 +11,7 @@ fi
 here="$(dirname "$0")"
 
 cp -rT $here/files/ ~/
+
+if [[ $(uname) == MSYS* ]]; then
+  git config --global core.autocrlf input
+fi

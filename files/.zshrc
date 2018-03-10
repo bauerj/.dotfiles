@@ -20,7 +20,7 @@ if [[ $(uname) == MSYS* ]]; then
   }
 else
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs root_indicator)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os status battery time public_ip)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon status battery time public_ip)
 fi
 
 # Set name of the theme to load. Optionally, if you set this to "random"
