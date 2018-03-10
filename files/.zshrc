@@ -108,5 +108,3 @@ function eu() {
   ssh root@$server
 }
 
-# Speed up prompt
-source ~/.zsh/git-prompt-status-sed.zsh

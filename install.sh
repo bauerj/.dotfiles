@@ -1,14 +1,13 @@
 #!/bin/bash
 
-cd
-if [[ ! -f .oh-my-zsh ]]; then
+if [[ ! -d ~/.oh-my-zsh ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-if [[ ! -f ~/.oh-my-zsh/custom/themes/powerlevel9k ]]; then
+if [[ ! -d ~/.oh-my-zsh/custom/themes/powerlevel9k ]]; then
   git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 fi
 
-cd "$(dirname "$0")"
+here="$(dirname "$0")"
 
-cp -rT files/ ~/
+cp -rT $here/files/ ~/
