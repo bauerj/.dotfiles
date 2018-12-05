@@ -100,16 +100,6 @@ export LANG=en_GB.UTF-8
 
 export EDITOR=nano
 
-function get_git_branch() {
-  if [[ -d .git ]]; then
-    echo -n $'\uE220 '
-    git symbolic-ref --short HEAD
-  fi
-}
-
-
-which meld > /dev/null || echo "Meld not found"
-
 function eu() {
   server="bauerj.eu"
   if [ -n "$1" ]; then
