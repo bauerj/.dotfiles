@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=~/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 if [[ $(uname) == MSYS* ]]; then
   py=$(dirname /c/python*/python)
@@ -9,35 +9,17 @@ if [[ $(uname) == MSYS* ]]; then
   export PATH="$PATH:/c/Program Files (x86)/Meld"
   # GPG
   export PATH="/C/Program Files (x86)/GnuPG/bin:$PATH"
-  # Theme
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir custom_git_fast)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
-  POWERLEVEL9K_CUSTOM_GIT_FAST="get_git_branch"
-  POWERLEVEL9K_CUSTOM_GIT_FAST_BACKGROUND="blue"
-  POWERLEVEL9K_CUSTOM_GIT_FAST_FOREGROUND="yellow"
-  function echotc() {
-    echo -n 256
-  }
-else
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs root_indicator)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon status battery time custom_public_host)
-  function none_prompt_segment { echo $5 }
-  function get_public_host() {
-    # Prints the last two parts of the hostname for the current public IP
-    host $(prompt_public_ip none) | awk '{print $NF}' | tr '.' '\n' | tail -n 3 | xargs | tr ' ' '.'
-  }
-  POWERLEVEL9K_CUSTOM_PUBLIC_HOST=get_public_host
 fi
 
-if [[ $(uname -a) == *MANJARO* ]]; then
-  alias p="sudo powerpill"
-fi
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs root_indicator)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(os_icon status battery time)
+
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 POWERLEVEL9K_MODE='awesome-patched'
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -98,8 +80,6 @@ export LANG=en_GB.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR=nano
-
 function eu() {
   server="bauerj.eu"
   if [ -n "$1" ]; then
@@ -107,4 +87,3 @@ function eu() {
   fi
   ssh root@$server
 }
-
