@@ -18,7 +18,7 @@ cp $here/files/.zshrc ~/
 cp $here/files/.gitconfig ~/
 
 if which wslpath > /dev/null 2>&1; then
-  cp $here/files/.hyper.js $(wslpath $(cmd.exe /C "echo %USERPROFILE%") | tr -d " \t\n\r" ) 
+  cp $here/files/.hyper.js $(wslpath $(cmd.exe /C "echo %USERPROFILE%") | tr -d " \t\n\r" )/AppData/Roaming/Hyper/
 fi
 
 if [[ $(uname) == MSYS* ]]; then
