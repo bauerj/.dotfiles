@@ -87,3 +87,5 @@ function eu() {
   fi
   ssh root@$server
 }
+
+alias ducks='du -cs -BG * | sort -rn | head'
