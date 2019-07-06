@@ -17,6 +17,8 @@ here="$(dirname "$0")"
 cp $here/files/.zshrc ~/
 cp $here/files/.gitconfig ~/
 
+sed -i 's/ZSH_THEME_TERM_TAB_TITLE_IDLE="%/ZSH_THEME_TERM_TAB_TITLE_IDLE="@%m: %/g' ~/.oh-my-zsh/lib/termsupport.zsh
+
 if which wslpath > /dev/null 2>&1; then
   cp $here/files/.hyper.js $(wslpath $(cmd.exe /C "echo %USERPROFILE%") | tr -d " \t\n\r" )/AppData/Roaming/Hyper/
 fi
